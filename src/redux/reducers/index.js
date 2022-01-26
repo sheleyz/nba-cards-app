@@ -1,32 +1,32 @@
 const initState = {
     players: [
         {
-            name: "Jonathan Taylor",
-            position: "RB",
-            yds: 1811,
-            td: 18,
-            avg: 5.5
+            name: "Nikola Jokic",
+            position: "C",
+            pts: 26.1,
+            reb: 13.8,
+            ast: 7.6
         },
         {
-            name: "Aaron Rodgers",
-            position: "QB",
-            yds: 4115,
-            td: 37,
-            avg: 7.8
+            name: "Giannis Antetokounmpo",
+            position: "PF",
+            pts: 28.6,
+            reb: 11.3,
+            ast: 6.0
         },
         {
-            name: "Cooper Kupp",
-            position: "WR",
-            yds: 1947,
-            td: 16,
-            avg: 13.4
+            name: "LeBron James",
+            position: "SF",
+            pts: 29.0,
+            reb: 7.7,
+            ast: 6.3
         },
         {
-            name: "Travis Kelce",
-            position: "TE",
-            yds: 1125,
-            td: 9,
-            avg: 12.2
+            name: "Kevin Durant",
+            position: "PF",
+            pts: 29.3,
+            reb: 7.4,
+            ast: 5.8
         }
     ]
 }

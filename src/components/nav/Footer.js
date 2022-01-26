@@ -13,9 +13,7 @@ function Footer() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
-        fontSize: "25px",
-        position: "fixed",
-        bottom: "0px"
+        fontSize: "25px"
     };
 
     return(

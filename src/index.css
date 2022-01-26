@@ -55,3 +55,9 @@ code {
   text-decoration: underline !important;
   font-weight: bold;
 }
+
+@media only screen and (max-width: 1000px) {
+  .cardWrapper {
+    width: 100vw !important;
+  }
+}
