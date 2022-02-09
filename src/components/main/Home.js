@@ -11,9 +11,9 @@ function Home() {
         backgroundColor: "lightgrey"
     };
 
-    const players = useSelector((state) => state.players);
+    const cards = useSelector((state) => state.cards);
 
-    const cardEles = players.map((player, index) => (
+    const cardEles = cards.map((player, index) => (
         <Card key={index} data={player} />
     ));
 
