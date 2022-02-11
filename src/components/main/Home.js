@@ -12,10 +12,13 @@ function Home() {
     };
 
     const cards = useSelector((state) => state.cards);
-
+    console.log("Cards:");
+    console.log(cards);
     const cardEles = cards.map((player, index) => (
         <Card key={index} data={player} />
     ));
+    console.log("Card Eles:");
+    console.log(cardEles);
 
     return (
         <div className="App">

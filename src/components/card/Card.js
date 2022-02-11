@@ -22,7 +22,8 @@ function Card(props) {
             <div style={{ padding: "5px" }}>
                 {/* <h3>{props.data.name}</h3> */}
                 {/* <h3>Position: {props.data.position}</h3> */}
-                <h3>Player ID: {props.data.player_id}</h3>
+                {/* <h3>Player ID: {props.data.player_id}</h3> */}
+                <h3>Game ID: {props.data.id}</h3>
                 <h3>Points: {props.data.pts}</h3>
                 <h3>Rebounds: {props.data.reb}</h3>
                 <h3>Assists: {props.data.ast}</h3>
