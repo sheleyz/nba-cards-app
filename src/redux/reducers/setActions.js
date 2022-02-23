@@ -1,6 +1,11 @@
-export const setCards = (cards) =>{
+export const setCards = (cards) => {
     return {
-        type: 'SET_CARDS',
-        cards: cards
-    }
+        type: "SET_CARDS",
+        cards: cards,
+    };
+};
+export const increaseLimit = () => {
+    return {
+        type: "INCREASE_LIMIT",
+    };
 };
