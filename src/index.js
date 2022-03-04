@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import rootReducer from "./redux/reducers";
 import Nav from "./components/nav/Nav";
 import Home from "./components/main/Home";
+import CardPage from "./components/card/CardPage";
 import About from "./components/main/About";
 import Footer from "./components/nav/Footer";
 
@@ -21,6 +22,7 @@ ReactDOM.render(
                 <Routes>
                     <Route path="/" element={<App />}>
                         <Route index element={<Home />} />
+                        <Route path="player/:id" element={<CardPage />} />
                         <Route path="about" element={<About />} />
                     </Route>
                 </Routes>

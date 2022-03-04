@@ -1,13 +1,21 @@
 const initState = {
     cards: [],
-    itemLimit: 10,
+    card: "",
+    itemLimit: 10
 };
 
 const rootReducer = (state = initState, action) => {
     if (action.type === "SET_CARDS") {
         return {
             ...state,
-            cards: action.cards,
+            cards: action.cards
+        };
+    }
+
+    if (action.type === "SET_CARD") {
+        return {
+            ...state,
+            card: action.card
         };
     }
 
@@ -17,7 +25,7 @@ const rootReducer = (state = initState, action) => {
 
         return {
             ...state,
-            itemLimit: limit,
+            itemLimit: limit
         };
     }
 
