@@ -11,6 +11,7 @@ import Home from "./components/main/Home";
 import CardPage from "./components/card/CardPage";
 import About from "./components/main/About";
 import Footer from "./components/nav/Footer";
+import Cards from "./components/main/Cards";
 
 const store = createStore(rootReducer);
 
@@ -22,7 +23,9 @@ ReactDOM.render(
                 <Routes>
                     <Route path="/" element={<App />}>
                         <Route index element={<Home />} />
-                        <Route path="player/:id" element={<CardPage />} />
+                        <Route path="player" element={<Cards />}>
+                            <Route path=":id" element={<CardPage />} />
+                        </Route>
                         <Route path="about" element={<About />} />
                     </Route>
                 </Routes>

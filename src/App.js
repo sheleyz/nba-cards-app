@@ -18,7 +18,6 @@ function App() {
         fetch("https://www.balldontlie.io/api/v1/players?per_page=100")
             .then((response) => response.json())
             .then((data) => dispatch(setCards(data.data)))
-            .then(console.log("REQUESTED in App"))
             .catch(() => console.log("Error fetching API"));
     }, [dispatch]);
 
