@@ -10,11 +10,11 @@ function Cards() {
 
     let wrapperStyle = {
         minHeight: "414px",
-        width: "1000px",
+        width: "100vw",
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        backgroundColor: "lightgrey",
+        backgroundColor: "lightgrey"
     };
 
     const itemLimit = useSelector((state) => state.itemLimit);

@@ -26,7 +26,7 @@ function CardPage() {
         minHeight: "100px",
         width: "250px",
         backgroundColor: "orange",
-        margin: "20px",
+        margin: "20px"
     };
 
     let closeButtonStyle = {
