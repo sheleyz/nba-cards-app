@@ -1,5 +1,5 @@
 import React from "react";
-import { clearOptions } from "../../redux/actions/setActions";
+import { clearOptions } from "../../redux/reducers/setActions";
 import { useDispatch, useSelector } from "react-redux";
 import Option from "./Option";
 
@@ -11,15 +11,21 @@ function Options() {
 
     if (Options) {
         show = {
-            right: "0",
-            backgroundColor: "blue",
-            color: "white"
+            right: "0px",
+            backgroundColor: "black",
+            color: "white",
+            position: "fixed",
+            top: "60px",
+            minHeight: "100%",
+            width: "200px"
         };
     } else {
         show = {
             right: "-100%",
-            backgroundColor: "blue",
-            color: "white"
+            backgroundColor: "black",
+            color: "white",
+            position: "fixed",
+            top: "60px"
         };
     }
 
@@ -50,9 +56,9 @@ function Options() {
 
     return (
         <div className={"options"} style={show}>
-            <div className={"top"}>
-                <h1 style={{ color: "white" }}>Sort Cards </h1>
-                <button handleClick={() => dispatch(clearOptions())}>Clear Sort Options</button>
+            <div className={"top"} style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+                <h1 style={{ color: "white", textAlign: "center" }}>Sort Cards </h1>
+                <button onClick={() => dispatch(clearOptions())}>Clear Sort Options</button>
             </div>
             <div className={"wrapper"}>{options}</div>
         </div>

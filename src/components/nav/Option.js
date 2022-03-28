@@ -9,12 +9,14 @@ function Option(props) {
     if (drop) {
         shower = {
             minHeight: "" + 25 * props.opt.values.length + "px",
-            maxHeight: "" + 25 * props.opt.values.length + "px"
+            maxHeight: "" + 25 * props.opt.values.length + "px",
+            display: "initial"
         };
     } else {
         shower = {
             minHeight: "0px",
-            maxHeight: "0px"
+            maxHeight: "0px",
+            display: "none"
         };
     }
 

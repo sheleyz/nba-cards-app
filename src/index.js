@@ -12,6 +12,8 @@ import CardPage from "./components/card/CardPage";
 import About from "./components/main/About";
 import Footer from "./components/nav/Footer";
 import Cards from "./components/main/Cards";
+import Options from "./components/nav/Options";
+import SortNav from "./components/nav/SortNav";
 
 const store = createStore(rootReducer);
 
@@ -20,6 +22,8 @@ ReactDOM.render(
         <BrowserRouter>
             <Provider store={store}>
                 <Nav />
+                <SortNav />
+                <Options />
                 <Routes>
                     <Route path="/" element={<App />}>
                         <Route index element={<Home />} />

@@ -1,12 +1,12 @@
 import React from "react";
-import { setSort } from "../../redux/actions/setActions";
+import { setSort } from "../../redux/reducers/setActions";
 import { useDispatch } from "react-redux";
 
 function OptionItem(props) {
     const dispatch = useDispatch();
 
-    const handleSort = (prop, val) => {
-        dispatch(setSort(prop, val));
+    const handleSort = (prop, value) => {
+        dispatch(setSort(prop, value));
     };
 
     const numberCheck = () => {
@@ -21,9 +21,7 @@ function OptionItem(props) {
         } else if (props.value === "SG") {
             return <span>Shooting Guard</span>;
         } else if (isNaN(props.value)) {
-            return (
-                props.value.charAt(0).toUpperCase() + props.value.substring(1)
-            );
+            return props.value.charAt(0).toUpperCase() + props.value.substring(1);
         } else {
             return props.value;
         }

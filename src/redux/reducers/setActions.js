@@ -35,3 +35,10 @@ export const setSort = (prop, val) => {
         value: val
     };
 };
+
+export const setName = (name) => {
+    return {
+        type: "SET_NAME",
+        name: name
+    };
+};

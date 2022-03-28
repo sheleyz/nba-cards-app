@@ -8,7 +8,8 @@ const initState = {
         conference: { toggle: false, value: [] },
         division: { toggle: false, value: [] },
         team_name: { toggle: false, value: [] }
-    }
+    },
+    name: ""
 };
 
 const rootReducer = (state = initState, action) => {
@@ -59,12 +60,15 @@ const rootReducer = (state = initState, action) => {
 
     if (action.type === "SET_SORT") {
         let originalArray = state.sorted[action.prop].value;
-
+        console.log("Original Array: " + originalArray);
         if (originalArray.includes(action.value)) {
-            let ind = originalArray.indexOf(action.value);
-            originalArray.splice(ind, 1);
+            let itemIndex = originalArray.indexOf(action.value);
+            console.log("Item Index: " + itemIndex);
+            originalArray.splice(itemIndex, 1);
+            console.log("Spliced: " + originalArray.splice(itemIndex, 1));
         } else {
             originalArray.push(action.value);
+            console.log("Original Array Pushed: " + originalArray);
         }
 
         let togg = originalArray.length > 0;
@@ -79,6 +83,13 @@ const rootReducer = (state = initState, action) => {
                     value: originalArray
                 }
             }
+        };
+    }
+
+    if (action.type === "SET_NAME") {
+        return {
+            ...state,
+            name: action.name
         };
     }
 
