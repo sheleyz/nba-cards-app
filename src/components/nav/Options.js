@@ -33,7 +33,7 @@ function Options() {
         {
             name: "Position",
             type: "position",
-            values: ["C", "PF", "SF", "PG", "SG"]
+            values: ["C", "F", "G"]
         },
         {
             name: "Conference",

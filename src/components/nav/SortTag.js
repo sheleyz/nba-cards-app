@@ -10,16 +10,12 @@ function SortTag(props) {
     };
 
     const numberCheck = (value) => {
-        if (value === "C") {
+        if (value.includes("C")) {
             return <span>Center</span>;
-        } else if (value === "PF") {
-            return <span>Power Forward</span>;
-        } else if (value === "SF") {
-            return <span>Small Forward</span>;
-        } else if (value === "PG") {
-            return <span>Point Guard</span>;
-        } else if (value === "SG") {
-            return <span>Shooting Guard</span>;
+        } else if (value.includes("F")) {
+            return <span>Forward</span>;
+        } else if (value.includes("G")) {
+            return <span>Guard</span>;
         } else if (isNaN(value)) {
             return value.charAt(0).toUpperCase() + value.substring(1);
         } else {

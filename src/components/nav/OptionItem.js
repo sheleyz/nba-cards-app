@@ -10,16 +10,12 @@ function OptionItem(props) {
     };
 
     const numberCheck = () => {
-        if (props.value === "C") {
+        if (props.value.includes("C")) {
             return <span>Center</span>;
-        } else if (props.value === "PF") {
-            return <span>Power Forward</span>;
-        } else if (props.value === "SF") {
-            return <span>Small Forward</span>;
-        } else if (props.value === "PG") {
-            return <span>Point Guard</span>;
-        } else if (props.value === "SG") {
-            return <span>Shooting Guard</span>;
+        } else if (props.value.includes("F")) {
+            return <span>Forward</span>;
+        } else if (props.value.includes("G")) {
+            return <span>Guard</span>;
         } else if (isNaN(props.value)) {
             return props.value.charAt(0).toUpperCase() + props.value.substring(1);
         } else {
