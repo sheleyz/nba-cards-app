@@ -26,7 +26,7 @@ function Card(props) {
                 <div style={{ padding: "5px" }}>
                     <h3>{props.data.first_name} {props.data.last_name}</h3>
                     <h3>Position: {props.data.position}</h3>
-                    <h3>Team: {props.data.team.full_name}</h3>
+                    <h3>{props.data.team.full_name}</h3>
                 </div>
             </div>
         </Link>
