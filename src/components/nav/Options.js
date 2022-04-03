@@ -31,11 +31,6 @@ function Options() {
 
     let Sort = [
         {
-            name: "Position",
-            type: "position",
-            values: ["C", "F", "G"]
-        },
-        {
             name: "Conference",
             type: "conference",
             values: ["East", "West"]
@@ -47,7 +42,7 @@ function Options() {
         },
         {
             name: "Team",
-            type: "team_name",
+            type: "name",
             values: ["76ers", "Bucks", "Bulls", "Cavaliers", "Celtics", "Clippers", "Grizzlies", "Hawks", "Heat", "Hornets", "Jazz", "Kings", "Knicks", "Lakers", "Magic", "Mavericks", "Nets", "Nuggets", "Pacers", "Pelicans", "Pistons", "Raptors", "Rockets", "Spurs", "Suns", "Thunder", "Timberwolves", "Trail Blazers", "Warriors", "Wizards"]
         }
     ];

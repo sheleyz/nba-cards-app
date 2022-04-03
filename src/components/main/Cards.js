@@ -22,7 +22,6 @@ function Cards() {
     const itemLimit = useSelector((state) => state.itemLimit);
     const cards = useSelector((state) => state.cards);
     const sorted = useSelector((state) => state.sorted);
-    const name = useSelector((state) => state.name);
 
     React.useEffect(() => {
         let sortObject = () => {
@@ -30,24 +29,15 @@ function Cards() {
             for (let p in sorted) {
                 if (sorted[p].toggle) {
                     sortedList = sortedList.filter((crd) =>
-                        sorted[p].value.includes(crd[p])
+                        sorted.team[p].value.includes(crd.team[p])
                     );
                 }
-            }
-            if (name !== "") {
-                sortedList = sortedList.filter((crd) => {
-                    if (crd.name.includes(name)) {
-                        return true;
-                    } else if (crd.name.toLowerCase().includes(name)) {
-                        return true;
-                    } else return crd.name.toUpperCase().includes(name);
-                });
             }
             setSort(sortedList);
         };
         sortObject();
         return () => sortObject();
-    }, [cards, sorted, name]);
+    }, [cards, sorted]);
 
     // const cardEles = cards.slice(0, itemLimit).map((player, index) => <Card key={index} data={player} />);
 

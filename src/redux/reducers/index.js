@@ -4,12 +4,12 @@ const initState = {
     itemLimit: 10,
     options: false,
     sorted: {
-        position: { toggle: false, value: [] },
-        conference: { toggle: false, value: [] },
-        division: { toggle: false, value: [] },
-        team_name: { toggle: false, value: [] }
-    },
-    name: ""
+        team: {
+            conference: { toggle: false, value: [] },
+            division: { toggle: false, value: [] },
+            name: { toggle: false, value: [] }
+        }
+    }
 };
 
 const rootReducer = (state = initState, action) => {
@@ -50,25 +50,24 @@ const rootReducer = (state = initState, action) => {
             itemLimit: 10,
             options: false,
             sorted: {
-                position: { toggle: false, value: [] },
-                conference: { toggle: false, value: [] },
-                division: { toggle: false, value: [] },
-                team_name: { toggle: false, value: [] }
+                team: {
+                    conference: { toggle: false, value: [] },
+                    division: { toggle: false, value: [] },
+                    name: { toggle: false, value: [] }
+                }
             }
         };
     }
 
     if (action.type === "SET_SORT") {
-        let originalArray = state.sorted[action.prop].value;
-        console.log("Original Array: " + originalArray);
+        let originalArray = state.sorted.team[action.prop].value;
         if (originalArray.includes(action.value)) {
             let itemIndex = originalArray.indexOf(action.value);
-            console.log("Item Index: " + itemIndex);
+            // console.log("Spliced: " + originalArray.splice(itemIndex, 1));
             originalArray.splice(itemIndex, 1);
-            console.log("Spliced: " + originalArray.splice(itemIndex, 1));
         } else {
             originalArray.push(action.value);
-            console.log("Original Array Pushed: " + originalArray);
+            // console.log("Pushed: " + originalArray);
         }
 
         let togg = originalArray.length > 0;
@@ -83,13 +82,6 @@ const rootReducer = (state = initState, action) => {
                     value: originalArray
                 }
             }
-        };
-    }
-
-    if (action.type === "SET_NAME") {
-        return {
-            ...state,
-            name: action.name
         };
     }
 

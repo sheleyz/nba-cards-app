@@ -48,6 +48,7 @@ function CardPage() {
     }, [params, dispatch]);
 
     const card = useSelector((state) => state.card);
+    // console.log(card.team.full_name);
 
     return (
         <div style={cardWrapperStyle}>
