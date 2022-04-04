@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "../card/Card";
 import { increaseLimit } from "../../redux/reducers/setActions";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Cards() {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function Cards() {
         flexWrap: "wrap",
         justifyContent: "center",
         backgroundColor: "lightgrey",
-        marginTop: "60px",
+        marginTop: "60px"
     };
 
     const [sort, setSort] = React.useState([]);
@@ -39,12 +39,20 @@ function Cards() {
         return () => sortObject();
     }, [cards, sorted]);
 
-    // const cardEles = cards.slice(0, itemLimit).map((player, index) => <Card key={index} data={player} />);
-
     let cardEles;
 
     if (sort.length !== 0) {
-        cardEles = sort.slice(0, itemLimit).map((player, index) => <Card key={index} data={player} />);
+        cardEles = sort.slice(0, itemLimit).map((player, index) => (
+            <Link to={`/player/${player.id}`} key={index} style={{ textDecoration: "none" }}>
+                <Card
+                    first_name={player.first_name}
+                    last_name={player.last_name}
+                    team_name={player.team.full_name}
+                    division={player.team.division}
+                    conference={player.team.conference}
+                />
+            </Link>
+        ));
     } else {
         cardEles = <h1>No cards in search</h1>;
     }

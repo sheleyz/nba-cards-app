@@ -1,6 +1,6 @@
 const initState = {
     cards: [],
-    card: "",
+    card: [],
     itemLimit: 10,
     options: false,
     sorted: {

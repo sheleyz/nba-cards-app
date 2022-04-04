@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { setCard } from "../../redux/reducers/setActions";
+import Card from "../card/Card";
 
 function CardPage() {
     const params = useParams();
@@ -22,13 +23,6 @@ function CardPage() {
         color: "black"
     }
 
-    let cardStyle = {
-        minHeight: "100px",
-        width: "250px",
-        backgroundColor: "orange",
-        margin: "20px"
-    };
-
     let closeButtonStyle = {
         textDecoration: "none",
         color: "white",
@@ -38,37 +32,36 @@ function CardPage() {
         right: "40px"
     }
 
-    // https://www.balldontlie.io/api/v1/players/<ID>
+    const cards = useSelector((state) => state.cards);
+    const card = useSelector((state) => state.card);
+
+    console.log(card);
 
     React.useEffect(() => {
-        fetch(`https://www.balldontlie.io/api/v1/players/${params.id}`)
-            .then((response) => response.json())
-            .then((data) => dispatch(setCard(data)))
-            .catch(() => console.log("Error fetching API"));
-    }, [params, dispatch]);
-
-    const card = useSelector((state) => state.card);
-    // console.log(card.team.full_name);
+        let sortObject = () => {
+            let sortedList = cards;
+            sortedList.filter((crd) => {
+                if (crd.id === Number(params.id)){
+                    dispatch(setCard(crd));
+                }
+                return "";
+            });
+        };
+        // console.log(card);
+        sortObject();
+        return () => sortObject();
+    }, [cards, card, params, dispatch]);
 
     return (
         <div style={cardWrapperStyle}>
             <Link to={"/"} style={closeButtonStyle}><div>X</div></Link>
-            <div style={cardStyle}>
-                <div>
-                    <img
-                        src="https://images.unsplash.com/photo-1585071258252-369a36d89e30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=978&q=80"
-                        alt="Player"
-                        width="250px"
-                        height="250px"
-                        style={{ objectFit: "cover" }}
-                    />
-                </div>
-                <div style={{ padding: "5px" }}>
-                    <h3>{card.first_name} {card.last_name}</h3>
-                    <h3>Position: {card.position}</h3>
-                    {/* <h3>Team: {card.team.full_name}</h3> */}
-                </div>
-            </div>
+            <Card
+                    first_name={card.first_name}
+                    last_name={card.last_name}
+                    // team_name={card.team.full_name}
+                    // division={card.team.division}
+                    // conference={card.team.conference}
+                />
         </div>
     );
 }
