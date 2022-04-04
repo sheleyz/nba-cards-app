@@ -6,7 +6,7 @@ function Footer() {
         width: "100%",
         height: "50px",
         color: "white",
-        backgroundColor: "dodgerblue",
+        backgroundColor: "#0b1b2c",
         clear: "both",
         textAlign: "center",
         lineHeight: "50px",

@@ -13,8 +13,13 @@ function Cards() {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        backgroundColor: "lightgrey",
         marginTop: "60px"
+    };
+
+    let buttonStyle = {
+        display: "flex",
+        justifyContent: "center",
+        marginBottom: "20px"
     };
 
     const [sort, setSort] = React.useState([]);
@@ -62,7 +67,7 @@ function Cards() {
             <div className="cardWrapper" style={wrapperStyle}>
                 {cardEles}
             </div>
-            <button onClick={() => dispatch(increaseLimit())}>Load More</button>
+            <div style={buttonStyle}><div onClick={() => dispatch(increaseLimit())} className="buttonStyle">Load More</div></div>
             <Outlet />
         </div>
     );

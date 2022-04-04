@@ -14,6 +14,7 @@ code {
 
 .App {
   text-align: center;
+  background-color: #c9c9c9;
 }
 
 .App-logo {
@@ -39,4 +40,19 @@ code {
 .activeLinkStyle {
   text-decoration: underline !important;
   font-weight: bold;
+}
+
+.buttonStyle {
+  min-width: 80px;
+  max-width: 160px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: black;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 10px;
 }

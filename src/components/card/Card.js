@@ -4,8 +4,8 @@ function Card(props) {
     let cardStyle = {
         minHeight: "100px",
         width: "250px",
-        backgroundColor: "orange",
-        color: "black",
+        backgroundColor: "#1d428a",
+        color: "white",
         margin: "20px",
         textDecoration: "none"
     };

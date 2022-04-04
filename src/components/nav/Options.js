@@ -11,18 +11,20 @@ function Options() {
 
     if (Options) {
         show = {
+            display: "initial",
             right: "0px",
-            backgroundColor: "black",
+            top: "60px",
+            backgroundColor: "#0b1b2c",
             color: "white",
             position: "fixed",
-            top: "60px",
-            minHeight: "100%",
-            width: "200px"
+            height: "100%",
+            width: "200px",
+            overflowY: "scroll"
         };
     } else {
         show = {
-            right: "-100%",
-            backgroundColor: "black",
+            display: "none",
+            backgroundColor: "#0b1b2c",
             color: "white",
             position: "fixed",
             top: "60px"
@@ -53,7 +55,7 @@ function Options() {
         <div className={"options"} style={show}>
             <div className={"top"} style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <h1 style={{ color: "white", textAlign: "center" }}>Sort Cards </h1>
-                <button onClick={() => dispatch(clearOptions())}>Clear Sort Options</button>
+                <div onClick={() => dispatch(clearOptions())} className="buttonStyle">Clear Sort Options</div>
             </div>
             <div className={"wrapper"}>{options}</div>
         </div>

@@ -24,7 +24,6 @@ function SortNav() {
                 }
             }
         }
-
         updateShow(check);
         updateTags(tagArray);
     }, [sorted]);
@@ -34,15 +33,15 @@ function SortNav() {
     if (show) {
         shower = {
             top: "60px",
-            backgroundColor: "orange",
+            color: "white",
+            backgroundColor: "grey",
             position: "fixed",
             display: "flex",
             flexWrap: "wrap"
         };
     } else {
         shower = {
-            top: "-60px",
-            backgroundColor: "orange"
+            display: "none"
         };
     }
 

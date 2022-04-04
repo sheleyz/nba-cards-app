@@ -11,7 +11,7 @@ function Nav() {
         padding: "10px",
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "dodgerblue",
+        backgroundColor: "#0b1b2c",
         position: "fixed",
         top: "0px",
         left: "0px",
@@ -29,7 +29,7 @@ function Nav() {
         <nav style={style}>
             <NavLink to="/" style={linkStyle} className={(navigationData) => navigationData.isActive ? "activeLinkStyle" : "" }>Home</NavLink>
             <NavLink to="/about" style={linkStyle} className={(navigationData) => navigationData.isActive ? "activeLinkStyle" : "" }>About</NavLink>
-            <button onClick={() => dispatch(toggleOptions())}>Sort</button>
+            <div onClick={() => dispatch(toggleOptions())} className="buttonStyle">Sort</div>
         </nav>
     );
 }
