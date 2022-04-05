@@ -8,7 +8,7 @@ function OptionItem(props) {
     const handleSort = (prop, value) => dispatch(setSort(prop, value));
 
     return (
-        <div className={"item"} onClick={() => handleSort(props.type, props.value)}>
+        <div className="item" onClick={() => handleSort(props.type, props.value)}>
             {props.value}
         </div>
     );

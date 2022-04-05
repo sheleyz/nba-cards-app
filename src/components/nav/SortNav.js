@@ -11,15 +11,15 @@ function SortNav() {
         let check = false;
         let tagArray = [];
 
-        for (let p in sorted) {
-            if (sorted[p].toggle) {
+        for (let i in sorted) {
+            if (sorted[i].toggle) {
                 check = true;
-                for (let x = 0; x < sorted[p].value.length; x++) {
+                for (let x = 0; x < sorted[i].value.length; x++) {
                     let obj = {
-                        prop: p,
+                        option: i,
                         value: "",
                     };
-                    obj.value = sorted[p].value[x];
+                    obj.value = sorted[i].value[x];
                     tagArray.push(obj);
                 }
             }
@@ -45,12 +45,12 @@ function SortNav() {
         };
     }
 
-    let tagEles = tags.map((st, idx) => (
-        <SortTag key={idx} value={st.value} prp={st.prop} />
+    let tagEles = tags.map((item, index) => (
+        <SortTag key={index} value={item.value} option={item.option} />
     ));
 
     return (
-        <div className={"sortNav"} style={shower}>
+        <div className="sortNav" style={shower}>
             {tagEles}
         </div>
     );

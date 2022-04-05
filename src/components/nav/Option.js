@@ -17,21 +17,21 @@ function Option(props) {
         };
     }
 
-    let values = props.opt.values.map((op, idx) => {
-        return <OptionItem key={idx} type={props.opt.type} value={op} />;
+    let values = props.option.values.map((option, index) => {
+        return <OptionItem key={index} type={props.option.type} value={option} />;
     });
 
     return (
-        <div className={"option"}>
+        <div className="option">
             <h3
-                className={"optHead"}
-                style={{ color: "white" }}
+                className="optionHeader"
+                style={{ color: "white", cursor: "pointer" }}
                 onClick={() => toggleDrop(!drop)}>
-                {props.opt.name}
+                {props.option.name}
                 {!drop}
                 {drop}
             </h3>
-            <div className={"listOpt"} style={shower}>
+            <div className="optionList" style={shower}>
                 {values}
             </div>
         </div>

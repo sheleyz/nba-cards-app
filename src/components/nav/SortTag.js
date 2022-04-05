@@ -15,8 +15,8 @@ function SortTag(props) {
     const handleSort = (prop, value) => dispatch(setSort(prop, value));
 
     return (
-        <div className={"itm"} onClick={() => handleSort(props.prp, props.value)} style={tagStyle}>
-            {props.value} <button>X</button>
+        <div className="tag" onClick={() => handleSort(props.option, props.value)} style={tagStyle}>
+            {props.value} <button style={{cursor: "pointer"}}>X</button>
         </div>
     );
 }

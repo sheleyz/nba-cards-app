@@ -17,7 +17,7 @@ function Footer() {
     };
 
     return(
-        <footer style={style}>
+        <footer className="footer" style={style}>
             <div>Copyright 2022</div>
         </footer>
     );

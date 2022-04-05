@@ -70,7 +70,7 @@ const rootReducer = (state = initState, action) => {
             // console.log("Pushed: " + originalArray);
         }
 
-        let togg = originalArray.length > 0;
+        let toggle = originalArray.length > 0;
 
         return {
             ...state,
@@ -78,7 +78,7 @@ const rootReducer = (state = initState, action) => {
             sorted: {
                 ...state.sorted,
                 [action.prop]: {
-                    toggle: togg,
+                    toggle: toggle,
                     value: originalArray
                 }
             }

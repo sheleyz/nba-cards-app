@@ -22,6 +22,12 @@ function Cards() {
         marginBottom: "20px"
     };
 
+    let noCardsStyle = {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+    };
+
     const [sort, setSort] = React.useState([]);
 
     const itemLimit = useSelector((state) => state.itemLimit);
@@ -59,7 +65,7 @@ function Cards() {
             </Link>
         ));
     } else {
-        cardEles = <h1>No cards in search</h1>;
+        cardEles = <div style={noCardsStyle}><h1>No cards found</h1></div>;
     }
 
     return (
