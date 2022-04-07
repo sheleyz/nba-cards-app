@@ -30,16 +30,16 @@ function Cards() {
 
     const [sort, setSort] = React.useState([]);
 
-    const itemLimit = useSelector((state) => state.itemLimit);
-    const cards = useSelector((state) => state.cards);
-    const sorted = useSelector((state) => state.sorted);
+    const itemLimit = useSelector(state => state.itemLimit);
+    const cards = useSelector(state => state.cards);
+    const sorted = useSelector(state => state.sorted);
 
     React.useEffect(() => {
         let sortObject = () => {
             let sortedList = cards;
             for (let p in sorted) {
                 if (sorted[p].toggle) {
-                    sortedList = sortedList.filter((crd) =>
+                    sortedList = sortedList.filter(crd =>
                         sorted.team[p].value.includes(crd.team[p])
                     );
                 }

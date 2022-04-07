@@ -21,7 +21,7 @@ function CardPage() {
         alignItems: "center",
         textDecoration: "none",
         color: "black"
-    }
+    };
 
     let closeButtonStyle = {
         textDecoration: "none",
@@ -30,7 +30,7 @@ function CardPage() {
         position: "fixed",
         top: "25px",
         right: "40px"
-    }
+    };
 
     const cards = useSelector((state) => state.cards);
     const card = useSelector((state) => state.card);
@@ -41,7 +41,7 @@ function CardPage() {
         let sortObject = () => {
             let sortedList = cards;
             sortedList.filter((crd) => {
-                if (crd.id === Number(params.id)){
+                if (crd.id === Number(params.id)) {
                     dispatch(setCard(crd));
                 }
                 return "";
@@ -54,14 +54,16 @@ function CardPage() {
 
     return (
         <div style={cardWrapperStyle}>
-            <Link to={"/"} style={closeButtonStyle}><div>X</div></Link>
+            <Link to={"/"} style={closeButtonStyle}>
+                <div>X</div>
+            </Link>
             <Card
-                    first_name={card.first_name}
-                    last_name={card.last_name}
-                    // team_name={card.team.full_name}
-                    // division={card.team.division}
-                    // conference={card.team.conference}
-                />
+                first_name={card.first_name}
+                last_name={card.last_name}
+                // team_name={card.team.full_name}
+                // division={card.team.division}
+                // conference={card.team.conference}
+            />
         </div>
     );
 }

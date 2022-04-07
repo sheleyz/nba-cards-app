@@ -17,7 +17,7 @@ function SortNav() {
                 for (let x = 0; x < sorted[i].value.length; x++) {
                     let obj = {
                         option: i,
-                        value: "",
+                        value: ""
                     };
                     obj.value = sorted[i].value[x];
                     tagArray.push(obj);
@@ -45,9 +45,7 @@ function SortNav() {
         };
     }
 
-    let tagEles = tags.map((item, index) => (
-        <SortTag key={index} value={item.value} option={item.option} />
-    ));
+    let tagEles = tags.map((item, index) => <SortTag key={index} value={item.value} option={item.option} />);
 
     return (
         <div className="sortNav" style={shower}>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Option from "./Option";
 
 function Options() {
-    const Options = useSelector((state) => state.options);
+    const Options = useSelector(state => state.options);
     const dispatch = useDispatch();
 
     let show;
@@ -49,11 +49,11 @@ function Options() {
 
     return (
         <div className="options" style={show}>
-            <div className="top" style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div className="top" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <h1 style={{ color: "white", textAlign: "center" }}>Sort Cards</h1>
                 <div onClick={() => dispatch(clearOptions())} className="buttonStyle">Clear Sort Options</div>
             </div>
-            <div className="wrapper" style={{padding: "10px"}}>{options}</div>
+            <div className="wrapper" style={{ padding: "10px" }}>{options}</div>
         </div>
     );
 }

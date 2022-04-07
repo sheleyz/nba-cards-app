@@ -10,13 +10,13 @@ function SortTag(props) {
         margin: "5px",
         backgroundColor: "#1d428a",
         borderRadius: "10px"
-    }
+    };
 
     const handleSort = (prop, value) => dispatch(setSort(prop, value));
 
     return (
-        <div className="tag" onClick={() => handleSort(props.option, props.value)} style={tagStyle}>
-            {props.value} <button style={{cursor: "pointer"}}>X</button>
+        <div className="tag" style={tagStyle}>
+            {props.value} <button onClick={() => handleSort(props.option, props.value)} style={{ cursor: "pointer" }}>X</button>
         </div>
     );
 }

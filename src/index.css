@@ -6,6 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 code {
@@ -56,4 +60,8 @@ code {
   background-color: white;
   box-sizing: border-box;
   padding: 10px;
+}
+
+a {
+  color: #78A5FF;
 }

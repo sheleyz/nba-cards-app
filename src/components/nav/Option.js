@@ -23,10 +23,7 @@ function Option(props) {
 
     return (
         <div className="option">
-            <h3
-                className="optionHeader"
-                style={{ color: "white", cursor: "pointer" }}
-                onClick={() => toggleDrop(!drop)}>
+            <h3 className="optionHeader" style={{ color: "white", cursor: "pointer" }} onClick={() => toggleDrop(!drop)}>
                 {props.option.name}
                 {!drop}
                 {drop}

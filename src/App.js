@@ -19,11 +19,11 @@ function App() {
         try {
             for (let i = 1; i <= 5; i++) {
                 fetch(`https://www.balldontlie.io/api/v1/players?page=${i}&per_page=100`)
-                    .then((response) => response.json())
-                    .then((data) => {
+                    .then(response => response.json())
+                    .then(data => {
                         let stringifiedData = JSON.stringify(data.data);
                         let parsedData = JSON.parse(stringifiedData);
-                        parsedData.forEach((item) => players.push(item));
+                        parsedData.forEach(item => players.push(item));
                     })
                     .then(() => {
                         if (i >= 5) {

@@ -27,8 +27,8 @@ function Nav() {
 
     return(
         <nav style={style}>
-            <NavLink to="/" style={linkStyle} className={(navigationData) => navigationData.isActive ? "activeLinkStyle" : "" }>Home</NavLink>
-            <NavLink to="/about" style={linkStyle} className={(navigationData) => navigationData.isActive ? "activeLinkStyle" : "" }>About</NavLink>
+            <NavLink to="/" style={linkStyle} className={navigationData => navigationData.isActive ? "activeLinkStyle" : "" }>Home</NavLink>
+            <NavLink to="/about" style={linkStyle} className={navigationData => navigationData.isActive ? "activeLinkStyle" : "" }>About</NavLink>
             <div onClick={() => dispatch(toggleOptions())} className="buttonStyle">Sort</div>
         </nav>
     );
