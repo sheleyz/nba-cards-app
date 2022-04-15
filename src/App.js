@@ -22,7 +22,7 @@ function App() {
         marginTop: "60px"
     };
 
-    // https://www.balldontlie.io/api/v1/players?per_page=10
+    // https://www.balldontlie.io/api/v1/players?per_page=100 => 38 pages of 100 players each
     // https://www.balldontlie.io/api/v1/season_averages?season=2021&player_ids[]=237
 
     React.useEffect(() => {
@@ -41,8 +41,6 @@ function App() {
                             if (i >= 5) {
                                 setLoadCards("loaded");
                                 dispatch(setCards(players));
-                                // console.log("Players:");
-                                // console.log(players);
                             }
                         })
                         .then(() => console.log(`Fetched API ${i}`))
