@@ -1,12 +1,10 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { setCard } from "../../redux/reducers/setActions";
 import Card from "../card/Card";
 
 function CardPage() {
     const params = useParams();
-    const dispatch = useDispatch();
 
     let cardWrapperStyle = {
         minHeight: "100%",
@@ -33,37 +31,16 @@ function CardPage() {
     };
 
     const cards = useSelector((state) => state.cards);
-    const card = useSelector((state) => state.card);
 
-    console.log(card);
-
-    React.useEffect(() => {
-        let sortObject = () => {
-            let sortedList = cards;
-            sortedList.filter((crd) => {
-                if (crd.id === Number(params.id)) {
-                    dispatch(setCard(crd));
-                }
-                return "";
-            });
-        };
-        // console.log(card);
-        sortObject();
-        return () => sortObject();
-    }, [cards, card, params, dispatch]);
+    let sortedList = cards;
+    let card = sortedList.find((crd) => crd.id === Number(params.id));
 
     return (
         <div style={cardWrapperStyle}>
             <Link to={"/"} style={closeButtonStyle}>
                 <div>X</div>
             </Link>
-            <Card
-                first_name={card.first_name}
-                last_name={card.last_name}
-                // team_name={card.team.full_name}
-                // division={card.team.division}
-                // conference={card.team.conference}
-            />
+            <Card first_name={card.first_name} last_name={card.last_name} team_name={card.team.full_name} division={card.team.division} conference={card.team.conference} />
         </div>
     );
 }

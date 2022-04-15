@@ -17,9 +17,7 @@ function Option(props) {
         };
     }
 
-    let values = props.option.values.map((option, index) => {
-        return <OptionItem key={index} type={props.option.type} value={option} />;
-    });
+    let values = props.option.values.map((option, index) => <OptionItem key={index} type={props.option.type} value={option} />);
 
     return (
         <div className="option">

@@ -1,6 +1,5 @@
 const initState = {
     cards: [],
-    card: [],
     itemLimit: 10,
     options: false,
     sorted: {
@@ -17,13 +16,6 @@ const rootReducer = (state = initState, action) => {
         return {
             ...state,
             cards: action.cards
-        };
-    }
-
-    if (action.type === "SET_CARD") {
-        return {
-            ...state,
-            card: action.card
         };
     }
 

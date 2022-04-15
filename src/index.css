@@ -65,3 +65,7 @@ code {
 a {
   color: #78A5FF;
 }
+
+.activeItem {
+  color: #78A5FF;
+}
