@@ -22,15 +22,19 @@ function App() {
         marginTop: "60px"
     };
 
-    // https://www.balldontlie.io/api/v1/players?per_page=100 => 38 pages of 100 players each
-    // https://www.balldontlie.io/api/v1/season_averages?season=2021&player_ids[]=237
+    // https://api.balldontlie.io/v1/players?per_page=100 => 38 pages of 100 players each
+    // https://api.balldontlie.io/v1/season_averages?season=2021&player_ids[]=237
 
     React.useEffect(() => {
         let players = [];
         if (load === "load") {
             try {
                 for (let i = 1; i <= 5; i++) {
-                    fetch(`https://www.balldontlie.io/api/v1/players?page=${i}&per_page=100`)
+                    fetch(`https://api.balldontlie.io/v1/players?page=${i}&per_page=100`, {
+                        headers: {
+                            "Authorization": `${process.env.REACT_APP_API_KEY}`
+                        }
+                    })
                         .then((response) => response.json())
                         .then((data) => {
                             let stringifiedData = JSON.stringify(data.data);

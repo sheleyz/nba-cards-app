@@ -22,7 +22,7 @@ function Footer() {
         <footer className="footer" style={style}>
             <div className="wrapper" style={wrapperStyle}>
                 <div style={{margin: "10px 0px"}}>
-                    <a href="https://www.balldontlie.io" target="_blank" rel="noopener noreferrer">View the API</a> used for this website.
+                    <a href="https://app.balldontlie.io/" target="_blank" rel="noopener noreferrer">View the API</a> used for this website.
                 </div>
                 <div style={{margin: "10px 0px"}}>
                     Disclaimer: This website is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the National Basketball Association (NBA), or any of its
